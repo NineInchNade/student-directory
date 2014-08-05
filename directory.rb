@@ -1,29 +1,48 @@
 #!/bin/env ruby
 # encoding: utf-8
-puts "The students of my cohort at Makers Academy"
-puts "-------------------------------------------"
-puts "Javier Silverio"
-puts "Elliot Lewis"
-puts "Ben Tillett"
-puts "Vincent Koch"
-puts "Michelle Ballard"
-puts "Nick Robets"
-puts "Tatjana Soukiassian"
-puts "Mervé Silk"
-puts "Albert Vallverdu"
-puts "Lovis Schultze"
-puts "Henry Stanley"
-puts "Spike Lindsey"
-puts "Ruth Earle"
-puts "Andy Gates"
-puts "Faisal Aydarus"
-puts "Ethel Ng"
-puts "Kevin Daniells"
-puts "Leopold Kwok"
-puts "James McNeil"
-puts "Jerome Pratt"
-puts "Chris Oatley"
-puts "Marc Singh"
-print "overall we have "
-print 24
-print " great students"
+
+student_count = 22 
+#first, we print the list of students 
+students = [
+"Javier Silverio",
+"Elliot Lewis",
+"Ben Tillett",
+"Vincent Koch",
+"Michelle Ballard",
+"Nick Roberts",
+"Tatiana Soukiassian", 
+"Mervé Silk",
+"Albert Vallverdu",
+"Lovis Schultze",
+"Henry Stanley",
+"Spike Lindsey",
+"Ruth Earle",
+"Andy Gates",
+"Faisal Aydarus",
+"Ethel Ng",
+"Kevin Daniells",
+"Maya Driver",
+"Leopold Kwok",
+"James McNeil",
+"Jerome Pratt",
+"David Wickes",
+"Chris Oatley",
+"Marc Singh"
+]
+
+def print_header 
+	puts "The students of my cohort at Makers Academy"
+	puts "-------------------------------------------"
+end
+
+def out(names)
+    names.each { |x| puts x} 
+    end 
+
+def print_footer(names)
+	puts "Overall, we have #{names.length} great students" 
+end
+
+print_header
+out(students) 
+print_footer(students) 
