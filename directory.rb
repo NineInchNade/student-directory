@@ -31,35 +31,42 @@ students = [
 ]
 
 def input_student 
-	puts "Please enter the names of the students"
-	puts "To finish, just hit return twice"
-	#create and empty array 
-	students = []
-	#get the first name
-	name = gets.chomp 
-	#while the name is not empy, repeat this code 
-	while !name.empty? do
+	 print "Please enter the names of the students\n"
+	 print "To finish, just hit return twice\n"
+	 #create and empty array 
+	 students = []
+	 #get the first name
+	 name = gets.chomp
+	 #while the name is not empy, repeat this code 
+	 while !name.empty? do
 		#add the student hash to the array
-		students << {:name => name, :cohort => :august}
-		puts "Now we have #{students.length} students" 
+		students << { :name => name, :cohort => :august }
+		print "Now we have #{students.length} students\n" 
 
 		name = gets.chomp
-	end
+	 end
 students 
 end 
 
-def print_header 
-	puts "The students of my cohort at Makers Academy"
-	puts "-------------------------------------------"
+def start_with(students, start_letter)
+	 students.select { |students| 
+	 students[:name][0] == start_letter }
 end
 
-def print(students)
-    students.each { |student| 
-    	puts "#{student[:name]} (#{student[:cohort]} cohort)" }
-    end 
+
+def print_header 
+	 print "The students of my cohort at Makers Academy\n"
+	 print "-------------------------------------------\n"
+end
+
+def prints(students)
+     students.each_with_index { |student, index |
+    	     print "#{index} #{student[:name]} (#{student[:cohort]} cohort)\n" }
+end
 
 def print_footer(names)
-	puts "Overall, we have #{names.length} great students" 
+	 puts "Overall, we have 1 great student" if names.length < 2 
+	 print "Overall, we have #{names.length} great students\n" 
 end
 
 #print_header
@@ -68,5 +75,6 @@ end
 
 students = input_student 
 print_header 
-print(students)
+prints(start_with(students, "A"))
 print_footer(students)
+
