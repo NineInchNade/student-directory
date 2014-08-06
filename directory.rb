@@ -30,6 +30,24 @@ students = [
 { :name =>"Marc Singh",:cohort =>  :august},
 ]
 
+def input_student 
+	puts "Please enter the names of the students"
+	puts "To finish, just hit return twice"
+	#create and empty array 
+	students = []
+	#get the first name
+	name = gets.chomp 
+	#while the name is not empy, repeat this code 
+	while !name.empty? do
+		#add the student hash to the array
+		students << {:name => name, :cohort => :august}
+		puts "Now we have #{students.length} students" 
+
+		name = gets.chomp
+	end
+students 
+end 
+
 def print_header 
 	puts "The students of my cohort at Makers Academy"
 	puts "-------------------------------------------"
@@ -44,6 +62,11 @@ def print_footer(names)
 	puts "Overall, we have #{names.length} great students" 
 end
 
-print_header
-print(students) 
-print_footer(students) 
+#print_header
+#print(students) 
+#print_footer(students) 
+
+students = input_student 
+print_header 
+print(students)
+print_footer(students)
