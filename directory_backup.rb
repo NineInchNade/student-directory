@@ -1,4 +1,3 @@
-
 def input_student 
 	 print "Please enter the names of the students\n"
 	 print "To finish, enter exit\n"
@@ -14,7 +13,6 @@ def input_student
 	 end
 students 
 end 
-
 
 def first_letter(students, letter)
 	students.select { |student| student[:name].start_with?(letter) }
@@ -44,19 +42,12 @@ def numb_of_students(students)
 	end
 end
 
-def start_with(students, start_letter)
-	 students.select { |students| 
-	 students[:name][0] == start_letter }
-end
-
-
 def print_header 
 	 print "The students of my cohort at Makers Academy\n"
 	 print "-------------------------------------------\n"
 end
 
 def prints(students)
-
      students.each_with_index do |student, index |
      print "#{index+1} #{student[:name]} (#{student[:cohort]} cohort)\n" end
 end
@@ -74,4 +65,3 @@ end
 students = input_student 
 prints(group(students, :cohort))
 print_footer(students)
-
