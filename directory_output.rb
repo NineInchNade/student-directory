@@ -27,7 +27,6 @@ students = [
 { :name => "Jerome Pratt", :cohort => :august},
 { :name =>"David Wickes",:cohort =>  :august},
 { :name =>"Chris Oatley", :cohort => :august},
-{ :name =>"Marc Singh",:cohort =>  :august},
 ]
 
 def print_header 
